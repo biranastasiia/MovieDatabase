@@ -72,7 +72,7 @@
                 const self = this;
                 this.loader = true;
 
-                axios.get('http://www.omdbapi.com/?apikey=ceb45ee3&t=' + self.filmTitle)
+                axios.get('https://www.omdbapi.com/?apikey=ceb45ee3&t=' + self.filmTitle)
                     .then(function(response){
                         self.filmInfo = response.data;
                         self.loader = false;
