@@ -1,0 +1,111 @@
+.footer {
+    background: linear-gradient(180deg, rgba(0, 0, 0, .1), transparent);
+    &-body {
+        padding-top: 100px;
+        padding-bottom: 120px;
+        @include tabletMD(){
+            padding-top: 60px;
+            padding-bottom: 80px;
+        }
+        & > .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            @include tabletMD(){
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+    }
+    &-right-column {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+        @include tabletMS(){
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    &-menu__title {
+        font-weight: 600;
+        font-size: 20px;
+        @include tabletMS(){
+            font-size: 18px;
+        }
+    }
+    &-menu__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @include tabletMS(){
+            height: 0px;
+            overflow: hidden;
+            transition: .3s all;
+        }
+    }
+    &-menu__list-item {
+        position: relative;
+        width: fit-content;
+        font-weight: 400;
+        @include tabletMS(){
+            font-size: 14px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: $beige;
+            transition: .3s all;
+        }
+        &:hover {
+            color: $beige;
+        }
+        &:hover::after {
+            width: 100%;
+        }
+    }
+    &-menu__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    &-menu__toggler {
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
+        position: relative;
+        cursor: pointer;
+        display: none;
+        @include tabletMS(){
+            display: block;
+        }
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 1px;
+            background-color: #fff;
+        }
+        &::before {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        &::after {
+            transform: translate(-50%, -50%);
+        }
+    }
+    &-underline {
+        background-color: #000;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .copyright {
+        text-align: center;
+        font-size: 16px;
+    }
+}

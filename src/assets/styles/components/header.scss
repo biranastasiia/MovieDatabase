@@ -1,0 +1,75 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $primary-dark;
+    z-index: 100;
+
+    & > .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-menu-burger {
+        display: none;
+    }
+    &-menu-list {
+        display: flex;
+        gap: 33px;
+        @include tabletMS(){
+            gap: 10px;
+        }
+    }
+    &-menu-list__item {
+        position: relative;
+        font-weight: 500;
+        @include tabletMS(){
+            font-size: 14px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: $beige;
+            transition: .3s all;
+        }
+        &:hover {
+            color: $beige;
+        }
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include tabletMS(){
+        gap: 5px;
+    }
+    img {
+        width: 33px;
+        height: 33px;
+        @include tabletMS(){
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 32px;
+        line-height: 1;
+        color: $beige;
+        @include tabletMS(){
+            font-size: 20px;
+        }
+    }
+}
