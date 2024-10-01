@@ -52,7 +52,7 @@
             getMovies: function(){
                 const self = this;
 
-                axios.get('http://www.omdbapi.com/?apikey=ceb45ee3&s=' + self.searchInput)
+                axios.get('https://www.omdbapi.com/?apikey=ceb45ee3&s=' + self.searchInput)
                     .then(function(response){
                         if(response.data.Search){
                             self.searchResults = response.data.Search;
